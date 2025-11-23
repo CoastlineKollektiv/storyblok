@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
-import { renderRichText } from '@storyblok/react';
+import { StoryblokRichText } from '@storyblok/react';
 import Link from 'next/link';
 import { Button } from '@/common';
 
@@ -12,7 +12,7 @@ const styles = {
 	btn: {
 		mt: '1rem',
 		'& a': { color: 'common.black' },
-		'&:hover': { bgcolor: 'common.white' },
+		'&:hover': { bgcolor: 'transparent' },
 	},
 	text: {
 		width: '100%',
@@ -31,8 +31,6 @@ const styles = {
 function FlexibleTravel({ blok }) {
 	const { header, to, leftContent, rightContent, discountText, discountColor } =
 		blok;
-	const leftText = renderRichText(leftContent);
-	const rightText = renderRichText(rightContent);
 
 	return (
 		<React.Fragment>
@@ -46,7 +44,7 @@ function FlexibleTravel({ blok }) {
 					<Typography variant="h3" sx={styles.header}>
 						{header}
 					</Typography>
-					<Grid dangerouslySetInnerHTML={{ __html: leftText }} />
+					<StoryblokRichText doc={leftContent} />
 					{to && (
 						<Button variant="outlined" sx={styles.btn}>
 							<Link href={to.full_slug}>{to.name}</Link>
@@ -54,10 +52,9 @@ function FlexibleTravel({ blok }) {
 					)}
 				</Grid>
 				<Grid size={{ xs: 12, md: 5.5 }}>
-					<Grid
-						sx={styles.rightText}
-						dangerouslySetInnerHTML={{ __html: rightText }}
-					/>
+					<Grid sx={styles.rightText}>
+						<StoryblokRichText doc={rightContent} />
+					</Grid>
 				</Grid>
 			</Grid>
 			<Grid container sx={styles.discount(discountColor)}>

@@ -5,7 +5,11 @@ import Link from 'next/link';
 import { Button } from '@/common';
 
 const styles = {
-	container: (color) => ({ bgcolor: color.color, px: '4rem', py: '2rem' }),
+	container: (color) => ({
+		bgcolor: color.color,
+		px: { xs: '2rem', md: '4rem' },
+		py: '2rem',
+	}),
 	text: { color: 'common.white', fontSize: '2.5rem', lineHeight: 1 },
 	btn: { mt: '1rem' },
 };

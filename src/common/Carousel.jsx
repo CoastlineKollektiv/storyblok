@@ -42,13 +42,15 @@ const styles = {
 	nextSideButton: {
 		position: 'absolute',
 		color: 'common.black',
-		top: '45%',
+		top: '50%',
+		transform: 'translateY(50%)',
 		right: -60,
 	},
 	prevSideButton: {
 		position: 'absolute',
 		color: 'common.black',
-		top: '45%',
+		top: '50%',
+		transform: 'translateY(50%)',
 		left: -60,
 	},
 	nextBtnPosition: {
@@ -318,30 +320,28 @@ function Carousel(props) {
 							: [containerStyles]),
 					]}
 				>
-					{!isSmallScreen && (
-						<Grid
-							sx={[styles.prevButtonWrap, showDots && styles.prevBtnWrap]}
-							size={1}
+					<Grid
+						sx={[styles.prevButtonWrap, showDots && styles.prevBtnWrap]}
+						size={1}
+					>
+						<IconButton
+							disabled={
+								!(isCircular || isAutoPlay) && value === viewSlides[0].key
+							}
+							onClick={handlePrev}
+							sx={[
+								styles.prevButton,
+								buttonType === 'onImage' && styles.prevBtnPosition,
+								buttonType === 'side' && styles.prevSideButton,
+							]}
 						>
-							<IconButton
-								disabled={
-									!(isCircular || isAutoPlay) && value === viewSlides[0].key
-								}
-								onClick={handlePrev}
-								sx={[
-									styles.prevButton,
-									buttonType === 'onImage' && styles.prevBtnPosition,
-									buttonType === 'side' && styles.prevSideButton,
-								]}
-							>
-								<ExpandMoreIcon
-									direction="left"
-									width={buttonType === 'side' ? 48 : 18}
-									height={buttonType === 'side' ? 48 : 18}
-								/>
-							</IconButton>
-						</Grid>
-					)}
+							<ExpandMoreIcon
+								direction="left"
+								width={buttonType === 'side' ? 48 : 18}
+								height={buttonType === 'side' ? 48 : 18}
+							/>
+						</IconButton>
+					</Grid>
 					{showDots && (
 						<Grid
 							alignItems="center"
@@ -361,28 +361,26 @@ function Carousel(props) {
 							))}
 						</Grid>
 					)}
-					{!isSmallScreen && (
-						<Grid sx={[styles.nextButtonWrap]} size={1}>
-							<IconButton
-								disabled={
-									!(isCircular || isAutoPlay) &&
-									value === viewSlides[viewSlides.length - 1].key
-								}
-								onClick={handleNext}
-								sx={[
-									styles.nextButton,
-									buttonType === 'onImage' && styles.nextBtnPosition,
-									buttonType === 'side' && styles.nextSideButton,
-								]}
-							>
-								<ExpandMoreIcon
-									direction="right"
-									width={buttonType === 'side' ? 48 : 18}
-									height={buttonType === 'side' ? 48 : 18}
-								/>
-							</IconButton>
-						</Grid>
-					)}
+					<Grid sx={[styles.nextButtonWrap]} size={1}>
+						<IconButton
+							disabled={
+								!(isCircular || isAutoPlay) &&
+								value === viewSlides[viewSlides.length - 1].key
+							}
+							onClick={handleNext}
+							sx={[
+								styles.nextButton,
+								buttonType === 'onImage' && styles.nextBtnPosition,
+								buttonType === 'side' && styles.nextSideButton,
+							]}
+						>
+							<ExpandMoreIcon
+								direction="right"
+								width={buttonType === 'side' ? 48 : 18}
+								height={buttonType === 'side' ? 48 : 18}
+							/>
+						</IconButton>
+					</Grid>
 				</Grid>
 			)}
 		</Grid>

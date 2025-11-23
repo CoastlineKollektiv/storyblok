@@ -8,7 +8,6 @@ const styles = {
 };
 
 function Content({ blok }) {
-	console.log(blok);
 	return (
 		<Grid sx={[blok.mainPageContent && styles.mainPageContent]}>
 			<StoryblokRichText doc={blok.text} />

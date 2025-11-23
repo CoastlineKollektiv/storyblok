@@ -88,7 +88,7 @@ function CarouselCards({ blok }) {
 			<Grid size={12}>
 				<Carousel
 					key={blok.id}
-					buttonType="side"
+					buttonType={isSmallScreen ? 'onImage' : 'side'}
 					sx={styles.carousel}
 					slides={slides}
 					slidesPerView={isSmallScreen ? 1 : 3}

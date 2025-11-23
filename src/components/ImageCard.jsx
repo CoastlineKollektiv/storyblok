@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { renderRichText } from '@storyblok/react';
+import { StoryblokRichText } from '@storyblok/react';
 import { Grid, Typography } from '@mui/material';
 import Link from 'next/link';
 import { Button } from '@/common';
@@ -27,7 +27,6 @@ const styles = {
 
 function ImageCard({ blok }) {
 	const { image, title, bgcolor, isBtnFilled, content, svg } = blok;
-	const renderedRichText = renderRichText(content);
 
 	return (
 		<Grid
@@ -51,7 +50,7 @@ function ImageCard({ blok }) {
 						{title}
 					</Typography>
 				)}
-				<Grid dangerouslySetInnerHTML={{ __html: renderedRichText }} />
+				<StoryblokRichText doc={content} />
 				{blok.to && (
 					<Button
 						sx={[styles.btn, !isBtnFilled && styles.outlinedBtn]}

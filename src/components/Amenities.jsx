@@ -11,7 +11,7 @@ const styles = {
 function Amenities({ blok }) {
 	const { title, note, amenities } = blok;
 	return (
-		<Grid container sx={styles.container} spacing={2}>
+		<Grid container sx={styles.container} justifyContent="center" spacing={2}>
 			{title && (
 				<Grid size={12}>
 					<Typography variant="h2" sx={styles.title}>

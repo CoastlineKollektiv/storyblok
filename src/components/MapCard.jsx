@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { renderRichText } from '@storyblok/react';
+import { StoryblokRichText } from '@storyblok/react';
 import { Grid, Typography } from '@mui/material';
 
 const styles = {
@@ -10,7 +10,6 @@ const styles = {
 
 function MapCard({ blok }) {
 	const { map, title, content } = blok;
-	const renderedRichText = renderRichText(content);
 	return (
 		<Grid container justifyContent="space-around" sx={styles.container}>
 			<Grid size={{ xs: 12, md: 5 }}>
@@ -20,7 +19,7 @@ function MapCard({ blok }) {
 				<Typography variant="h3" sx={styles.title}>
 					{title}
 				</Typography>
-				<Grid dangerouslySetInnerHTML={{ __html: renderedRichText }} />
+				<StoryblokRichText doc={content} />
 			</Grid>
 		</Grid>
 	);

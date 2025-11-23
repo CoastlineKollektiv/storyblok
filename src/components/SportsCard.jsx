@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
-import { renderRichText, StoryblokComponent } from '@storyblok/react';
+import { StoryblokComponent } from '@storyblok/react';
 import { Carousel } from '@/common';
+import { StoryblokRichText } from '@storyblok/react';
 
 const styles = {
 	container: (color) => ({
@@ -17,7 +18,6 @@ const styles = {
 function SportsCard({ blok }) {
 	const { content, title, images, amenities, bgcolor } = blok;
 
-	const renderedRichText = renderRichText(content);
 	const slides = images.map((image) => ({
 		key: image.id,
 		content: (
@@ -43,7 +43,7 @@ function SportsCard({ blok }) {
 				<Typography variant="h4" sx={styles.title}>
 					{title}
 				</Typography>
-				<Grid dangerouslySetInnerHTML={{ __html: renderedRichText }} />
+				<StoryblokRichText doc={content} />
 			</Grid>
 			<Grid size={{ xs: 12, md: 5.5 }}>
 				<Carousel
@@ -56,7 +56,7 @@ function SportsCard({ blok }) {
 			</Grid>
 			{amenities.map((amenity) => (
 				<Grid
-					size={12 / amenities.length}
+					size={{ xs: 4, md: 12 / amenities.length }}
 					key={amenity._uid}
 					container
 					textAlign="center"

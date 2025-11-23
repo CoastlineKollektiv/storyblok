@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
-import { renderRichText } from '@storyblok/react';
+import { StoryblokRichText } from '@storyblok/react';
 import Link from 'next/link';
 import { Button, Carousel } from '@/common';
 
@@ -29,6 +29,10 @@ const styles = {
 		mt: '1rem',
 		width: 400,
 		px: '6rem',
+		'&:hover': {
+			bgcolor: 'common.white',
+			color: 'common.black',
+		},
 		'& a': {
 			color: 'common.black',
 		},
@@ -52,8 +56,8 @@ const styles = {
 };
 
 function Campaign({ blok }) {
-	const renderedRichText = renderRichText(blok.content);
-	const slides = blok.images.map((image) => ({
+	const { content, images } = blok;
+	const slides = images.map((image) => ({
 		key: image.id,
 		content: (
 			<Grid
@@ -95,7 +99,7 @@ function Campaign({ blok }) {
 				/>
 			</Grid>
 			<Grid size={{ xs: 11, md: 5 }}>
-				<Grid dangerouslySetInnerHTML={{ __html: renderedRichText }} />
+				<StoryblokRichText doc={content} />
 				{blok.to && (
 					<Button variant="contained" sx={[styles.btn]}>
 						<Link href={blok.to.full_slug}>{blok.to.name}</Link>

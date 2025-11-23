@@ -1,12 +1,18 @@
 'use client';
 import React from 'react';
 import { Grid, Paper, Typography } from '@mui/material';
-import { renderRichText } from '@storyblok/react';
+import { StoryblokRichText } from '@storyblok/react';
 import Link from 'next/link';
 import { Button, Carousel } from '@/common';
 
 const styles = {
-	container: { pb: '3rem', pt: '4rem', mx: '2rem', mb: '2rem' },
+	container: {
+		pb: '3rem',
+		pt: { xs: '1rem', md: '4rem' },
+		px: { xs: '1rem', md: 0 },
+		mx: { xs: '1rem', md: '2rem' },
+		mb: '2rem',
+	},
 	carouselWrap: { position: 'relative' },
 	label: { lineHeight: 1, textTransform: 'uppercase' },
 	discountValue: { fontSize: '2.5rem', lineHeight: 1 },
@@ -57,7 +63,6 @@ const styles = {
 		left: -50,
 		zIndex: 10,
 	}),
-	wrap: { ml: '1rem' },
 	btnWrap: { mt: '1rem', ml: '1rem' },
 };
 
@@ -72,7 +77,6 @@ function BungalowCard({ blok }) {
 		bestSellerText,
 		svg,
 	} = blok;
-	const renderedRichText = renderRichText(content);
 
 	const slides = images.map((image) => ({
 		key: image.id,
@@ -121,10 +125,7 @@ function BungalowCard({ blok }) {
 				)}
 			</Grid>
 			<Grid size={{ xs: 12, md: 5 }}>
-				<Grid
-					sx={styles.wrap}
-					dangerouslySetInnerHTML={{ __html: renderedRichText }}
-				/>
+				<StoryblokRichText doc={content} />
 				<Grid container sx={styles.btnWrap}>
 					<Grid size={5.5}>
 						{to && (

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { StoryblokComponent, renderRichText } from '@storyblok/react';
+import { StoryblokComponent, StoryblokRichText } from '@storyblok/react';
 import { Grid, Typography } from '@mui/material';
 
 const styles = {
@@ -11,14 +11,14 @@ const styles = {
 };
 
 function Team({ blok }) {
-	const renderedRichText = renderRichText(blok.description);
+	const { description } = blok;
 	return (
 		<Grid container sx={styles.container}>
 			<Grid size={12}>
 				<Typography variant="h4">{blok.header}</Typography>
 			</Grid>
 			<Grid size={7}>
-				<Grid dangerouslySetInnerHTML={{ __html: renderedRichText }} />
+				<StoryblokRichText doc={description} />
 			</Grid>
 			{blok.members.map((member) => (
 				<Grid key={member._uid} size={{ xs: 12, sm: 6 }}>
