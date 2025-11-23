@@ -1,39 +1,38 @@
 {
-  "name": "test",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
-    "start": "next start",
-    "lint": "next lint",
-    "prettier:format": "prettier --write .",
-    "eslint:fix": "eslint --fix ."
-  },
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/material": "^7.0.1",
-    "@mui/x-date-pickers": "^8.0.0",
-    "@storyblok/react": "^2.4.7",
-    "date-fns": "^4.1.0",
-    "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-hook-form": "^7.56.0-next.0"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.23.3",
-    "eslint": "^8.54.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "14.0.3",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-watch": "^8.0.0",
-    "prettier": "^3.1.0"
-  }
+	"name": "blueprint-blank-nextjs",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+   		"prettier:format": "prettier --write .",
+    	"eslint:fix": "eslint --fix ."
+	},
+	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.1",
+		"@mui/material": "^7.3.5",
+		"@mui/x-date-pickers": "^8.19.0",
+		"@storyblok/react": "^5.4.18",
+		"date-fns": "^4.1.0",
+		"next": "^16.0.3",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
+		"react-hook-form": "^7.66.1"
+	},
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.28.5",
+		"eslint": "^9.39.1",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-next": "^16.0.3",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-prettier": "^5.5.4",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-watch": "^8.0.0",
+		"prettier": "^3.6.2"
+	}
 }

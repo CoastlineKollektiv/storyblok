@@ -1,0 +1,14 @@
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.ico
+*.html
+*.css
+*.ttf
+*.woff
+*.woff2
+/node_modules/**
+/build/**
+/coverage/**
+/storybook/**
