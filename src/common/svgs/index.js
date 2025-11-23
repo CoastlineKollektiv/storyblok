@@ -1,0 +1,15 @@
+export { default as MailIcon } from './Mail';
+export { default as PhoneIcon } from './Phone';
+export { default as WebIcon } from './web';
+export { default as DateIcon } from './Date';
+export { default as ExpandMoreIcon } from './ExpandMore';
+export { default as InfoIcon } from './Info';
+export { default as WhatsAppIcon } from './WhatsApp';
+export { default as LocationIcon } from './Location';
+export { default as InstagramIcon } from './Instagram';
+export { default as HouseIcon } from './House';
+export { default as VisibilityOffIcon } from './VisibilityOff';
+export { default as VisibilityOnIcon } from './VisibilityOn';
+export { default as ContactIcon } from './Contact';
+export { default as PaymentIcon } from './Payment';
+export { default as SurfInstructorIcon } from './SurfInstructor';
