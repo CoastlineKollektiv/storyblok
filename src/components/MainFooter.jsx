@@ -14,7 +14,7 @@ import Content from './Content';
 const styles = {
 	container: {
 		alignItems: 'flex-start',
-		p: '2rem 3rem',
+		p: { xs: '2rem', md: '2rem 3rem' },
 	},
 	icon: { mr: '0.5rem' },
 	contact: { mb: '1rem', fontWeight: 'bold' },

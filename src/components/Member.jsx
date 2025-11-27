@@ -7,7 +7,7 @@ const styles = {
 	container: { mt: '2rem' },
 	image: { borderRadius: '50%' },
 	iconWrap: { display: 'flex', alignItems: 'center', mt: '.5rem' },
-	icon: { mr: '1rem' },
+	icon: { mr: { xs: '0.25rem', md: '1rem' } },
 };
 
 function Member({ blok }) {
