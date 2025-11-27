@@ -62,7 +62,7 @@ const styles = {
 	}),
 	footerTitle: { mb: '6rem' },
 	icon: { color: 'common.white', m: 0 },
-	bottomSpace: { mb: '8rem' },
+	bottomSpace: { mb: { xs: '4rem', md: '8rem' } },
 };
 
 function Hero({ blok }) {

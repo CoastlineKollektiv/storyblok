@@ -27,13 +27,8 @@ const styles = {
 		fontWeight: 'bold',
 		mt: '1rem',
 		px: '6rem',
-		'&:hover': {
-			bgcolor: 'common.white',
-			color: 'common.black',
-		},
-		'& a': {
-			color: 'common.black',
-		},
+		'&:hover': { bgcolor: 'common.white', color: 'common.black' },
+		'& a': { color: 'common.black' },
 	},
 	discount: (color) => ({
 		display: 'flex',
