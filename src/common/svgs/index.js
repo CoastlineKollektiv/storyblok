@@ -13,3 +13,4 @@ export { default as VisibilityOnIcon } from './VisibilityOn';
 export { default as ContactIcon } from './Contact';
 export { default as PaymentIcon } from './Payment';
 export { default as SurfInstructorIcon } from './SurfInstructor';
+export { default as MenuIcon } from './Menu';

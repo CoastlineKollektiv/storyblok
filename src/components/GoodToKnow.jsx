@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
-import Accordion from '@/common/Accordion';
+import { Accordion } from '@/common';
 
 const styles = {
 	container: { py: '2rem' },
