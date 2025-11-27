@@ -19,7 +19,6 @@ const styles = {
 		color: 'common.white',
 		fontWeight: 'bold',
 		mt: '4rem',
-		width: 400,
 		px: '6rem',
 	},
 	btn2: {
@@ -27,7 +26,6 @@ const styles = {
 		color: 'common.black',
 		fontWeight: 'bold',
 		mt: '1rem',
-		width: 400,
 		px: '6rem',
 		'&:hover': {
 			bgcolor: 'common.white',
