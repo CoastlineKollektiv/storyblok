@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { StoryblokRichText } from '@storyblok/react';
+import { Text } from '@/common';
 
 const gridMap = {
 	0: 'a',
@@ -38,9 +39,9 @@ function About({ blok }) {
 			textAlign="center"
 		>
 			<Grid size={{ xs: 12, sm: 8, md: 5 }}>
-				<Typography variant="button" component="h2" sx={styles.title}>
+				<Text type="Title" fontType="secondary" sx={styles.title}>
 					{blok.title}
-				</Typography>
+				</Text>
 			</Grid>
 			<Grid size={{ xs: 12, sm: 8 }}>
 				<Grid component={StoryblokRichText} doc={blok.content} />

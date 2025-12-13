@@ -21,12 +21,17 @@ import MapCard from '@/components/MapCard';
 import ImageCard from '@/components/ImageCard';
 import Amenities from '@/components/Amenities';
 import Amenity from '@/components/Amenity';
+import Tabs from '@/components/Tabs';
 import SportsCard from '@/components/SportsCard';
 import AddonCard from '@/components/AddonCard';
 import DiscountCard from '@/components/DiscountCard';
 import Arrival from '@/components/Arrival';
 import ArrivalType from '@/components/ArrivalType';
 import FlexibleTravel from '@/components/FlexibleTravel';
+import TabTemplate1 from '@/components/TabTemplate1';
+import SurfTeam from '@/components/SurfTeam';
+import TabTemplate2 from '@/components/TabTemplate2';
+import TabTemplate3 from '@/components/TabTemplate3';
 
 const components = {
 	page: Page,
@@ -43,7 +48,12 @@ const components = {
 	'speed-dial': SpeedDial,
 	arrivalType: ArrivalType,
 	addOnCard: AddonCard,
+	surfTeam: SurfTeam,
 	sportsCard: SportsCard,
+	tabs: Tabs,
+	tabTemplate1: TabTemplate1,
+	tabTemplate2: TabTemplate2,
+	tabTemplate3: TabTemplate3,
 	imageCard: ImageCard,
 	mapCard: MapCard,
 	hero: Hero,

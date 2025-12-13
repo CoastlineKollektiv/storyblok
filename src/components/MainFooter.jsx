@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import Link from 'next/link';
 import {
 	ContactIcon,
@@ -10,6 +10,7 @@ import {
 	SurfInstructorIcon,
 } from '@/common/svgs';
 import Content from './Content';
+import { Text } from '@/common';
 
 const styles = {
 	container: {
@@ -37,10 +38,10 @@ function MainFooter({ blok }) {
 	return (
 		<Grid container sx={styles.container} spacing={2}>
 			<Grid size={{ xs: 12, md: 4 }}>
-				<Typography sx={styles.contact}>
+				<Text sx={styles.contact}>
 					<InfoIcon width={40} height={40} sx={styles.icon} />
 					{infoTitle}
-				</Typography>
+				</Text>
 				{links.map((item) => {
 					if (item.link.linktype === 'story')
 						return (
@@ -58,10 +59,10 @@ function MainFooter({ blok }) {
 				})}
 			</Grid>
 			<Grid size={{ xs: 12, md: 4 }}>
-				<Typography sx={styles.contact}>
+				<Text sx={styles.contact}>
 					<SurfInstructorIcon width={40} height={40} sx={styles.icon} />
 					{surfInstructorTitle}
-				</Typography>
+				</Text>
 				{surfInstructorLinks.map((item) => (
 					<Grid key={item.id} sx={styles.link}>
 						<Link href={item.full_slug}>{item.name}</Link>
@@ -69,10 +70,10 @@ function MainFooter({ blok }) {
 				))}
 			</Grid>
 			<Grid size={{ xs: 12, md: 4 }}>
-				<Typography sx={styles.contact}>
+				<Text sx={styles.contact}>
 					<LocationIcon width={40} height={40} sx={styles.icon} />
 					{locationTitle}
-				</Typography>
+				</Text>
 				{locationLinks.map((item) => (
 					<Grid key={item.id} sx={styles.link}>
 						<Link href={item.full_slug}>{item.name}</Link>
@@ -80,17 +81,17 @@ function MainFooter({ blok }) {
 				))}
 			</Grid>
 			<Grid size={{ xs: 12, md: 4 }}>
-				<Typography sx={styles.contact}>
+				<Text sx={styles.contact}>
 					<PaymentIcon width={40} height={40} sx={styles.icon} />
 					{paymentTitle}
-				</Typography>
-				<Typography>{paymentGateway}</Typography>
+				</Text>
+				<Text>{paymentGateway}</Text>
 			</Grid>
 			<Grid size={{ xs: 12, md: 4 }} offset={{ xs: 0, md: 4 }}>
-				<Typography sx={styles.contact}>
+				<Text sx={styles.contact}>
 					<ContactIcon width={40} height={40} sx={styles.icon} />
 					{contactTitle}
-				</Typography>
+				</Text>
 				<Content blok={{ text: contactText }} />
 			</Grid>
 		</Grid>

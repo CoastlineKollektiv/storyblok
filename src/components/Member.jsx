@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { PhoneIcon, MailIcon } from '../common/svgs';
+import { Text } from '@/common';
 
 const styles = {
 	container: { mt: '2rem' },
@@ -23,19 +24,19 @@ function Member({ blok }) {
 				/>
 			</Grid>
 			<Grid size={{ xs: 9, md: 8 }} textAlign="left">
-				<Typography variant="button">{blok.name}</Typography>
-				<Typography variant="body2">{blok.role}</Typography>
+				<Text variant="button">{blok.name}</Text>
+				<Text variant="body2">{blok.role}</Text>
 				{blok.mobile && (
-					<Typography sx={styles.iconWrap} variant="body2">
+					<Text sx={styles.iconWrap} variant="body2">
 						<PhoneIcon sx={styles.icon} />
 						{blok.mobile}
-					</Typography>
+					</Text>
 				)}
 				{blok.mail && (
-					<Typography sx={styles.iconWrap} variant="body2">
+					<Text sx={styles.iconWrap} variant="body2">
 						<MailIcon sx={styles.icon} />
 						{blok.mail}
-					</Typography>
+					</Text>
 				)}
 			</Grid>
 		</Grid>

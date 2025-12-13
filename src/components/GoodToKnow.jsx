@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
-import { Accordion } from '@/common';
+import { Grid } from '@mui/material';
+import { Accordion, Text } from '@/common';
 
 const styles = {
 	container: { py: '2rem' },
@@ -13,9 +13,9 @@ function GoodToKnow({ blok }) {
 	return (
 		<Grid container justifyContent="center" spacing={2} sx={styles.container}>
 			<Grid size={11}>
-				<Typography variant="button" sx={styles.heading}>
+				<Text variant="button" sx={styles.heading}>
 					{heading}
-				</Typography>
+				</Text>
 			</Grid>
 			<Grid size={11}>
 				<Accordion data={items} />

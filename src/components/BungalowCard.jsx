@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import { Grid, Paper, Typography } from '@mui/material';
+import { Grid, Paper } from '@mui/material';
 import { StoryblokRichText } from '@storyblok/react';
 import Link from 'next/link';
 import { Button, Carousel } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: {
@@ -118,9 +119,9 @@ function BungalowCard({ blok }) {
 							height="fit-content"
 							src={svg.filename}
 						/>
-						<Typography variant="button" sx={styles.text}>
+						<Text variant="button" sx={styles.text}>
 							{bestSellerText}
-						</Typography>
+						</Text>
 					</Grid>
 				)}
 			</Grid>

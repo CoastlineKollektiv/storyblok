@@ -100,12 +100,12 @@ export default function ElevateAppBar(props) {
 	const handleCollapseClick = (e, item) => {
 		e.stopPropagation();
 		const { key, full_slug, collapse } = item;
+		if (!collapse) router.push(full_slug);
 		if (key === collapseId) setCollapseOpen(!collapseOpen);
 		else {
 			setCollapseId(key);
 			setCollapseOpen(true);
 		}
-		if (!collapse) router.push(full_slug);
 	};
 
 	const handleClick = (event, menu) => {

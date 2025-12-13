@@ -1,36 +1,32 @@
 'use client';
-import React from 'react';
 import React, { useState, useCallback, useMemo } from 'react';
-import { Grid2, AppBar, Slide, Tabs as MuiTabs, Tab } from '@mui/material';
+import {
+	Grid,
+	AppBar,
+	Slide,
+	Tabs as MuiTabs,
+	Tab,
+	tabsClasses,
+} from '@mui/material';
 import Text from './Text';
 
 const styles = {
-	'.disabled': {
+	tabs: {
 		color: 'colors.disabled',
+		minHeight: '48px',
+		'& .Mui-selected': { color: 'text.secondary' },
+		'& .MuiTabs-indicator': { height: 3 },
 	},
-	minHeight: '48px',
-	'.Mui-selected': {
-		color: 'text.secondary',
+	appBar: { background: 'common.white' },
+	centered: {
+		flex: 0,
+		borderBottom: 'none',
+		textWrap: 'nowrap',
 	},
-	'.MuiTabs-indicator': {
-		height: 3,
-	},
-	MuiAppBar: {
-		background: 'common.white',
-	},
-	MuiTabs: {
-		centered: {
-			flex: 0,
-			borderBottom: 'none',
-			textWrap: 'nowrap',
-		},
-		tabsCentered: {
-			content: 'justifyContent: "center"',
-		},
-		tabsBordered: {
-			borderBottom: '1px solid',
-			borderColor: 'colors.drawText',
-		},
+	tabPanelContent: { justifyContent: 'center' },
+	tabsBordered: {
+		borderBottom: '1px solid',
+		borderColor: 'colors.drawText',
 	},
 	tab: {
 		opacity: 1,
@@ -39,40 +35,9 @@ const styles = {
 		borderBottom: '1px solid lightgray',
 		minWidth: 'fit-content',
 	},
-	tabTitle: {
-		color: 'inherit',
-	},
+	tabTitle: { color: 'inherit' },
 };
 
-/**
- * A customizable tab component for creating tabbed interfaces.
- *
- * @component
- *
- * `Tabs` is a versatile React component for creating tabbed interfaces. It allows you
- * to define tab labels, content, and various configuration options. Developers can
- * customize the appearance, behavior, and positioning of tabs, making it suitable for
- * a wide range of use cases.
- *
- * @example
- *
- * Example usage of Tabs within a component
- *
- * ```jsx
- * <Tabs
- * tabs={[
- * { id: 1, label: 'Tab 1', content: <div>Content for Tab 1</div> },
- * { id: 2, label: 'Tab 2', content: <div>Content for Tab 2</div> },
- * ]}
- * variant="fullWidth"
- * centered={false}
- * defaultValue={0}
- * isAppBar={false}
- * />
- * ```
- */
-
-/* eslint-disable react/prop-types */
 function Tabs(props) {
 	const {
 		tabs,
@@ -80,7 +45,7 @@ function Tabs(props) {
 		variant = 'fullWidth',
 		sx = {},
 		centered = false,
-		defaultValue = 0,
+		defaultValue = tabs[0]?.value || 0,
 		onChange = null,
 	} = props;
 
@@ -107,7 +72,9 @@ function Tabs(props) {
 					styles.tabs,
 					centered && styles.tabsCentered,
 					variant === 'scrollable' && {
-						'& .MuiTabsClasses.scrollButtons': { opacity: 0.3 },
+						[`& .${tabsClasses.scrollButtons}`]: {
+							'&.Mui-disabled': { opacity: 0.3 },
+						},
 					},
 					sx,
 				]}
@@ -115,15 +82,15 @@ function Tabs(props) {
 				indicatorColor="primary"
 				textColor="inherit"
 				variant={variant}
-				{...(variant === 'scrollable' && {
-					allowScrollButtonsMobile: variant === 'scrollable',
-				})}
+				// {...(variant === 'scrollable' && {
+				// 	allowScrollButtonsMobile: variant === 'scrollable',
+				// })}
 			>
 				{filterTabs.map((item, index) => {
 					const inValue = item.value === value || item.value === index;
 					return (
 						<Tab
-							sx={[styles.tab, centered && styles.centered, styles.tabStyles]}
+							sx={[styles.tab, centered && styles.tabsBordered]}
 							key={item.id}
 							value={item.value || index}
 							disableFocusRipple
@@ -154,21 +121,15 @@ function Tabs(props) {
 				{filterTabs.map((item, index) => {
 					const inValue = item.value === value || item.value === index;
 					return (
-						<Slide
-							direction="left"
-							key={item.id}
-							in={inValue}
-							mountOnEnter
-							unmountOnExit
-						>
-							<Grid2
+						<Slide direction="left" key={item.id} in={inValue} mountOnEnter>
+							<Grid
 								container
-								size={12}
 								role="tabpanel"
-								sx={styles.tabPanelContent}
+								sx={[styles.tabPanelContent, inValue && item.tabStyles]}
+								aria-hidden={!inValue}
 							>
-								<Grid2 size={{ xs: 12, md: 10 }}>{item.content}</Grid2>
-							</Grid2>
+								<Grid size={12}>{inValue && item.content}</Grid>
+							</Grid>
 						</Slide>
 					);
 				})}

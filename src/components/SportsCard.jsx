@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { StoryblokComponent } from '@storyblok/react';
 import { Carousel } from '@/common';
 import { StoryblokRichText } from '@storyblok/react';
+import { Text } from '@/common';
 
 const styles = {
 	container: (color) => ({
@@ -40,9 +41,9 @@ function SportsCard({ blok }) {
 			sx={styles.container(bgcolor)}
 		>
 			<Grid size={{ xs: 12, md: 5.5 }}>
-				<Typography variant="h4" sx={styles.title}>
+				<Text variant="h4" sx={styles.title}>
 					{title}
-				</Typography>
+				</Text>
 				<StoryblokRichText doc={content} />
 			</Grid>
 			<Grid size={{ xs: 12, md: 5.5 }}>

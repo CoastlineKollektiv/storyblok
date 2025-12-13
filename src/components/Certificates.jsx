@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Text } from '@/common';
 
 const styles = {
 	container: {
@@ -19,12 +20,12 @@ function Certificates({ blok }) {
 	return (
 		<Grid container sx={styles.container}>
 			<Grid size={7}>
-				<Typography variant="button" component="div" sx={styles.header}>
+				<Text variant="button" component="div" sx={styles.header}>
 					{title}
-				</Typography>
-				<Typography variant="body2" sx={styles.caption}>
+				</Text>
+				<Text variant="body2" sx={styles.caption}>
 					{caption}
-				</Typography>
+				</Text>
 			</Grid>
 			<Grid size={12}>
 				<Grid

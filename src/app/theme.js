@@ -12,7 +12,9 @@ const theme = createTheme({
 	},
 	cssVariables: true,
 	typography: {
-		fontFamily: [normFont.style.fontFamily],
+		fontFamily: [normFont.style.fontFamily, monoFont.style.fontFamily].join(
+			',',
+		),
 	},
 	components: {
 		MuiCssBaseline: {

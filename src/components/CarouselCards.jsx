@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { Carousel, Button } from '@/common';
+import { Grid, useMediaQuery, useTheme } from '@mui/material';
+import { Carousel, Button, Text } from '@/common';
 
 const styles = {
 	container: {
@@ -45,17 +45,17 @@ function CarouselCards({ blok }) {
 						/>
 					</Grid>
 					<Grid size={12} justifyItems="center">
-						<Typography sx={styles.cardHeader} variant="h6">
+						<Text sx={styles.cardHeader} variant="h6">
 							{card.header}
-						</Typography>
+						</Text>
 					</Grid>
 					<Grid size={12}>
-						<Typography variant="body">{card.content}</Typography>
+						<Text variant="body">{card.content}</Text>
 					</Grid>
 					<Grid size={12}>
-						<Typography sx={styles.caption} variant="subtitle2">
+						<Text sx={styles.caption} variant="subtitle2">
 							{card.caption}
-						</Typography>
+						</Text>
 					</Grid>
 				</Grid>
 			),
@@ -71,12 +71,12 @@ function CarouselCards({ blok }) {
 			justifyContent="center"
 		>
 			<Grid size={{ xs: 12, md: 6 }}>
-				<Typography variant="button" sx={styles.header}>
+				<Text variant="button" sx={styles.header}>
 					{header}
-				</Typography>
+				</Text>
 			</Grid>
 			<Grid size={{ xs: 12, md: 8 }}>
-				<Typography sx={styles.content}>{content}</Typography>
+				<Text sx={styles.content}>{content}</Text>
 			</Grid>
 			<Grid size={{ xs: 12, md: 8 }}>
 				{to && (

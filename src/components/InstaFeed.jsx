@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { InstagramIcon } from '@/common/svgs';
+import { Text } from '@/common';
 
 const styles = {
 	container: { alignItems: 'center' },
@@ -18,9 +19,9 @@ function InstaFeed({ blok }) {
 				sx={{ py: '1rem' }}
 			>
 				<InstagramIcon sx={styles.icon} />
-				<Typography variant="button" sx={styles.header}>
+				<Text variant="button" sx={styles.header}>
 					{blok.header}
-				</Typography>
+				</Text>
 			</Grid>
 			<Grid size={12} container>
 				{blok.images.map((image) => (

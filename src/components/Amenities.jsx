@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { StoryblokComponent } from '@storyblok/react';
+import { Text } from '@/common';
 
 const styles = {
 	container: { p: '2rem' },
@@ -14,9 +15,9 @@ function Amenities({ blok }) {
 		<Grid container sx={styles.container} justifyContent="center" spacing={2}>
 			{title && (
 				<Grid size={12}>
-					<Typography variant="h2" sx={styles.title}>
+					<Text variant="h2" sx={styles.title}>
 						{title}
-					</Typography>
+					</Text>
 				</Grid>
 			)}
 			{amenities.map((amenity) => (
@@ -24,15 +25,17 @@ function Amenities({ blok }) {
 					size={{ xs: 4, md: 12 / amenities.length }}
 					key={amenity._uid}
 					container
+					spacing={0}
 					textAlign="center"
 					alignItems="center"
 					flexDirection="column"
+					justifyContent="center"
 				>
 					<StoryblokComponent blok={amenity} />
 				</Grid>
 			))}
 			<Grid size={{ xs: 10, md: 4 }}>
-				<Typography variant="caption">{note}</Typography>
+				<Text variant="caption">{note}</Text>
 			</Grid>
 		</Grid>
 	);

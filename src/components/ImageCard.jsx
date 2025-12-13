@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
 import { StoryblokRichText } from '@storyblok/react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import Link from 'next/link';
 import { Button } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: (color) => ({
@@ -46,9 +47,9 @@ function ImageCard({ blok }) {
 					/>
 				)}
 				{title && (
-					<Typography variant="button" component="h2" sx={styles.title}>
+					<Text variant="button" component="h2" sx={styles.title}>
 						{title}
-					</Typography>
+					</Text>
 				)}
 				<StoryblokRichText doc={content} />
 				{blok.to && (

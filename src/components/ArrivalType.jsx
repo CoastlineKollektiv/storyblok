@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Text } from '@/common';
 
 const styles = {
 	container: { mt: '2rem' },
@@ -21,12 +22,12 @@ function ArrivalType({ blok }) {
 				)}
 			</Grid>
 			<Grid size={10}>
-				<Typography component="div" variant="h6">
+				<Text component="div" variant="h6">
 					{header}
-				</Typography>
-				<Typography component="div" variant="body">
+				</Text>
+				<Text component="div" variant="body">
 					{content}
-				</Typography>
+				</Text>
 			</Grid>
 		</Grid>
 	);

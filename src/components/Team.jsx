@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
 import { StoryblokComponent, StoryblokRichText } from '@storyblok/react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Text } from '@/common';
 
 const styles = {
 	container: {
@@ -15,7 +16,7 @@ function Team({ blok }) {
 	return (
 		<Grid container sx={styles.container}>
 			<Grid size={12}>
-				<Typography variant="h4">{blok.header}</Typography>
+				<Text variant="h4">{blok.header}</Text>
 			</Grid>
 			<Grid size={7}>
 				<StoryblokRichText doc={description} />

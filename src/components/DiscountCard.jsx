@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import Link from 'next/link';
 import { Button } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: (color) => ({
@@ -25,9 +26,9 @@ function DiscountCard({ blok }) {
 			flexDirection="column"
 		>
 			<Grid size={{ xs: 11, md: 7 }}>
-				<Typography variant="button" sx={styles.text}>
+				<Text variant="button" sx={styles.text}>
 					{text}
-				</Typography>
+				</Text>
 			</Grid>
 			{to && (
 				<Button variant="contained" sx={[styles.btn]}>

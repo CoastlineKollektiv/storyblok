@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { FormProvider, useForm } from 'react-hook-form';
 import { CheckField, TextField } from '@/common/ReactHookForm';
 import { Button } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: (color) => ({
@@ -42,10 +43,10 @@ function Subscribe({ blok }) {
 							height="fit-content"
 						/>
 					)}
-					<Typography component="h2" variant="h3">
+					<Text component="h2" variant="h3">
 						{blok.title}
-					</Typography>
-					<Typography>{blok.caption}</Typography>
+					</Text>
+					<Text>{blok.caption}</Text>
 				</Grid>
 				<Grid
 					size={{ xs: 12, md: 5 }}

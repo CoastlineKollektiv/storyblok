@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import Link from 'next/link';
 import { LocationIcon } from '@/common/svgs';
 import { Button } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: (image) => ({
@@ -79,20 +80,20 @@ function Hero({ blok }) {
 		>
 			<Grid size={{ xs: 11, sm: 10, md: 8, lg: 6 }} textAlign="left">
 				{blok.location && (
-					<Typography variant="h6" sx={styles.location}>
+					<Text variant="h6" sx={styles.location}>
 						<LocationIcon sx={styles.icon} /> {blok.location}
-					</Typography>
+					</Text>
 				)}
-				<Typography
+				<Text
 					variant="h1"
 					sx={[styles.title, !blok.booking && styles.footerTitle]}
 				>
 					{blok.title}
-				</Typography>
+				</Text>
 				{blok.caption && (
-					<Typography variant="h4" sx={styles.caption}>
+					<Text variant="h4" sx={styles.caption}>
 						{blok.caption}
-					</Typography>
+					</Text>
 				)}
 				{blok.booking && (
 					<Button
@@ -108,12 +109,12 @@ function Hero({ blok }) {
 			</Grid>
 			{blok.discount && (
 				<Grid sx={styles.discount(blok.themeColor.color)}>
-					<Typography variant="button" sx={styles.discountValue}>
+					<Text variant="button" sx={styles.discountValue}>
 						{blok.discount}%
-					</Typography>
-					<Typography variant="h6" sx={styles.label}>
+					</Text>
+					<Text variant="h6" sx={styles.label}>
 						{blok.discountLabel}
-					</Typography>
+					</Text>
 				</Grid>
 			)}
 			{blok.banner && (
@@ -128,7 +129,7 @@ function Hero({ blok }) {
 						justifyContent: 'center',
 					}}
 				>
-					<Typography variant="body1">{blok.banner}</Typography>
+					<Text variant="body1">{blok.banner}</Text>
 				</Grid>
 			)}
 		</Grid>

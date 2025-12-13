@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { StoryblokComponent } from '@storyblok/react';
+import { Text } from '@/common';
 
 const styles = {
 	conatiner: { px: '4rem', py: '2rem' },
-	title: { textTransform: 'uppercase' },
 	info: { display: 'flex', alignItems: 'center' },
 	infoIcon: { mr: '1rem' },
 };
@@ -16,9 +16,9 @@ function AddonCard({ blok }) {
 	return (
 		<Grid container sx={styles.conatiner} spacing={2}>
 			<Grid size={12}>
-				<Typography variant="h4" sx={styles.title}>
+				<Text type="Title" fontType="secondary">
 					{title}
-				</Typography>
+				</Text>
 			</Grid>
 			{addons.map((amenity) => (
 				<Grid
@@ -33,7 +33,7 @@ function AddonCard({ blok }) {
 				</Grid>
 			))}
 			<Grid size={{ xs: 12, md: 4 }}>
-				<Typography variant="body1" sx={styles.info}>
+				<Text sx={styles.info} fontType="secondary">
 					{infoSvg.filename && (
 						<Grid
 							component="img"
@@ -45,7 +45,7 @@ function AddonCard({ blok }) {
 						/>
 					)}
 					{note}
-				</Typography>
+				</Text>
 			</Grid>
 		</Grid>
 	);

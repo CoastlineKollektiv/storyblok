@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { StoryblokRichText } from '@storyblok/react';
 import Link from 'next/link';
 import { Button } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: { p: { xs: '2rem', md: '2rem 6rem' }, bgcolor: '#F3F1E9' },
@@ -41,9 +42,9 @@ function FlexibleTravel({ blok }) {
 				justifyContent="space-between"
 			>
 				<Grid size={{ xs: 12, md: 5.5 }}>
-					<Typography variant="h3" sx={styles.header}>
+					<Text variant="h3" sx={styles.header}>
 						{header}
-					</Typography>
+					</Text>
 					<StoryblokRichText doc={leftContent} />
 					{to && (
 						<Button variant="outlined" sx={styles.btn}>
@@ -58,9 +59,9 @@ function FlexibleTravel({ blok }) {
 				</Grid>
 			</Grid>
 			<Grid container sx={styles.discount(discountColor)}>
-				<Typography variant="body" sx={styles.text}>
+				<Text variant="body" sx={styles.text}>
 					{discountText}
-				</Typography>
+				</Text>
 			</Grid>
 		</React.Fragment>
 	);

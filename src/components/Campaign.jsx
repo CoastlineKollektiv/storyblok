@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { StoryblokRichText } from '@storyblok/react';
 import Link from 'next/link';
 import { Button, Carousel } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: { pb: '2rem', pt: '5rem' },
@@ -75,12 +76,12 @@ function Campaign({ blok }) {
 			<Grid size={{ xs: 11, md: 5 }} sx={styles.carouselWrap}>
 				{blok.discount && (
 					<Grid sx={styles.discount(blok.themeColor.color)}>
-						<Typography variant="button" sx={styles.discountValue}>
+						<Text variant="button" sx={styles.discountValue}>
 							{blok.discount}%
-						</Typography>
-						<Typography variant="h6" sx={styles.label}>
+						</Text>
+						<Text variant="h6" sx={styles.label}>
 							{blok.discountLabel}
-						</Typography>
+						</Text>
 					</Grid>
 				)}
 				<Carousel

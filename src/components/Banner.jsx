@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import Link from 'next/link';
 import { Button } from '@/common';
+import { Text } from '@/common';
 
 const styles = {
 	container: (color) => ({
@@ -36,14 +37,14 @@ function Banner({ blok }) {
 		<Grid container sx={styles.container(bgcolor)}>
 			<Grid size={{ xs: 12, md: 6 }} textAlign="center">
 				<Grid sx={styles.circle(textColor)} />
-				<Typography
+				<Text
 					textAlign="center"
 					variant="button"
 					component="h2"
 					sx={styles.title(textColor)}
 				>
 					{title}
-				</Typography>
+				</Text>
 				{blok.to && (
 					<Button variant="contained" sx={styles.btn}>
 						<Link href={blok.to.full_slug}>{blok.to.name}</Link>

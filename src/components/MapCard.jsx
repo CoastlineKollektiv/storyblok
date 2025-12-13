@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
 import { StoryblokRichText } from '@storyblok/react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Text } from '@/common';
 
 const styles = {
 	container: { p: '2rem' },
@@ -16,9 +17,9 @@ function MapCard({ blok }) {
 				<Grid component="img" alt={map.alt} src={map.filename} width="100%" />
 			</Grid>
 			<Grid size={{ xs: 12, md: 5 }}>
-				<Typography variant="h3" sx={styles.title}>
+				<Text variant="h3" sx={styles.title}>
 					{title}
-				</Typography>
+				</Text>
 				<StoryblokRichText doc={content} />
 			</Grid>
 		</Grid>

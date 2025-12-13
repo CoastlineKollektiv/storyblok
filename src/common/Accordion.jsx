@@ -4,10 +4,10 @@ import {
 	Accordion as MuiAccordion,
 	AccordionSummary,
 	AccordionDetails,
-	Typography,
 } from '@mui/material';
 import { StoryblokComponent } from '@storyblok/react';
 import { ExpandMoreIcon } from './svgs';
+import Text from './Text';
 
 const styles = {
 	accordion: (theme) => ({
@@ -16,7 +16,6 @@ const styles = {
 			display: 'none',
 		},
 	}),
-	heading: { fontWeight: 'bold' },
 };
 
 export default function Accordion(props) {
@@ -41,9 +40,9 @@ export default function Accordion(props) {
 				<AccordionSummary
 					expandIcon={<ExpandMoreIcon width={24} height={24} />}
 				>
-					<Typography sx={styles.heading} component="span">
+					<Text sx={styles.heading} bold component="span" fontType="secondary">
 						{item.heading}
-					</Typography>
+					</Text>
 				</AccordionSummary>
 				<AccordionDetails>
 					<StoryblokComponent blok={item.content[0]} />
