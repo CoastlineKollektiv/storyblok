@@ -5,14 +5,19 @@ import { StoryblokComponent } from '@storyblok/react';
 import { Text } from '@/common';
 
 const styles = {
-	container: { p: '2rem' },
+	container: { p: { xs: '1rem', md: '2rem' } },
 	title: { mb: '2rem' },
 };
 
 function Amenities({ blok }) {
 	const { title, note, amenities } = blok;
 	return (
-		<Grid container sx={styles.container} alignItems={'flex-start'} spacing={2}>
+		<Grid
+			container
+			sx={styles.container}
+			alignItems={'flex-start'}
+			spacing={{ xs: 1, md: 2 }}
+		>
 			{title && (
 				<Grid size={12}>
 					<Text type="BigTitle" light sx={styles.title}>
@@ -22,7 +27,7 @@ function Amenities({ blok }) {
 			)}
 			{amenities.map((amenity) => (
 				<Grid
-					size={{ xs: 4, md: 12 / amenities.length }}
+					size={{ xs: 6, sm: 4, md: 12 / amenities.length }}
 					key={amenity._uid}
 					container
 					spacing={0}

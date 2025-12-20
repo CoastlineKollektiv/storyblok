@@ -6,7 +6,12 @@ import { Text } from '@/common';
 
 const styles = {
 	image: { borderRadius: '50%' },
-	iconWrap: { display: 'flex', alignItems: 'center', mt: '.5rem' },
+	iconWrap: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: { xs: 'center', sm: 'flex-start' },
+		mt: '.5rem',
+	},
 	icon: { mr: { xs: '0.25rem', md: '1rem' } },
 };
 
@@ -16,7 +21,7 @@ function Member({ blok }) {
 			<Grid size={12} textAlign={'left'}>
 				<Text type="Text">{blok.description}</Text>
 			</Grid>
-			<Grid size={{ xs: 3, md: 4 }}>
+			<Grid size={{ xs: 12, sm: 3, md: 4 }}>
 				<Grid
 					component="img"
 					sx={styles.image}
@@ -25,7 +30,10 @@ function Member({ blok }) {
 					width={{ xs: 80, md: 110 }}
 				/>
 			</Grid>
-			<Grid size={{ xs: 9, md: 8 }} textAlign="left">
+			<Grid
+				size={{ xs: 12, sm: 9, md: 8 }}
+				textAlign={{ xs: 'center', sm: 'left' }}
+			>
 				<Text type="Text" bold fontType="primary">
 					{blok.name}
 				</Text>

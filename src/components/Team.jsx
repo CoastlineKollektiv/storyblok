@@ -13,7 +13,7 @@ const styles = {
 
 function Team({ blok }) {
 	return (
-		<Grid container sx={styles.container} spacing={3}>
+		<Grid container sx={styles.container} spacing={{ xs: 1, md: 3 }}>
 			<Grid size={12}>
 				<Text type="BigTitle" light>
 					{blok.header}
