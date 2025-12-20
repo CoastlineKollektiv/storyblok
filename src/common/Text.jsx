@@ -2,10 +2,11 @@ import { Typography } from '@mui/material';
 import { monoFont, normFont } from '../app/constants';
 
 const TYPE_CONFIG = {
-	BigTitle: { variant: 'button', fontSize: '1rem' },
-	Title: { variant: 'button', fontSize: '0.75rem' },
-	Subtitle: { variant: 'h6', fontSize: '0.688rem', textTransform: 'uppercase' },
-	Text: { variant: 'h6', fontSize: '0.75rem' },
+	BigTitle: { variant: 'button', fontSize: '2.5rem' },
+	SubTitle: { variant: 'button', fontSize: '1.75rem' },
+	Title: { variant: 'button', fontSize: '1.25rem' },
+	Subtitle: { variant: 'h6', fontSize: '1rem', textTransform: 'uppercase' },
+	Text: { variant: 'h6', fontSize: '1rem' },
 	p: { variant: 'h6', fontSize: '0.8125rem' },
 	body: { variant: 'h6', fontSize: '0.875rem' },
 	caption: { variant: 'h6', fontSize: '0.5625rem', textTransform: 'uppercase' },
@@ -19,7 +20,7 @@ const getBrandFont = (fontType) => {
 
 // Gets font weight based on props
 const getFontWeight = (light, bold) => {
-	if (light) return 300;
+	if (light) return 500;
 	if (bold) return 700;
 	return 400;
 };
@@ -29,18 +30,18 @@ const styles = {
 		color: 'inherit',
 		fontFamily: getBrandFont(fontType),
 		fontWeight: getFontWeight(light, bold),
-		lineHeight: 1,
+		lineHeight: 1.25,
 	}),
 };
 
 const Text = ({
 	children,
 	component = 'div',
-	fontType = 'primary',
+	fontType = 'secondary',
 	sx = {},
-	type = 'p',
+	type = 'Text',
 	variant = null,
-	color = 'primary',
+	color = 'common.black',
 	light = false,
 	bold = false,
 	...others

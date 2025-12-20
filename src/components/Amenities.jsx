@@ -12,10 +12,10 @@ const styles = {
 function Amenities({ blok }) {
 	const { title, note, amenities } = blok;
 	return (
-		<Grid container sx={styles.container} justifyContent="center" spacing={2}>
+		<Grid container sx={styles.container} alignItems={'flex-start'} spacing={2}>
 			{title && (
 				<Grid size={12}>
-					<Text variant="h2" sx={styles.title}>
+					<Text type="BigTitle" light sx={styles.title}>
 						{title}
 					</Text>
 				</Grid>
@@ -34,8 +34,8 @@ function Amenities({ blok }) {
 					<StoryblokComponent blok={amenity} />
 				</Grid>
 			))}
-			<Grid size={{ xs: 10, md: 4 }}>
-				<Text variant="caption">{note}</Text>
+			<Grid size={{ xs: 10, md: 6, lg: 4 }}>
+				<Text type="body">{note}</Text>
 			</Grid>
 		</Grid>
 	);

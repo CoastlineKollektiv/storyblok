@@ -8,7 +8,7 @@ import { Text } from '@/common';
 
 const styles = {
 	container: { p: { xs: '2rem', md: '2rem 6rem' }, bgcolor: '#F3F1E9' },
-	header: { mb: '1.5rem', textTransform: 'uppercase' },
+	header: { mb: '1.5rem' },
 	rightText: { mt: '6rem' },
 	btn: {
 		mt: '1rem',
@@ -18,9 +18,7 @@ const styles = {
 	text: {
 		width: '100%',
 		color: 'common.white',
-		fontWeight: 700,
 		letterSpacing: 4,
-		lineHeight: '20px',
 	},
 	discount: (color) => ({
 		textAlign: 'center',
@@ -42,7 +40,7 @@ function FlexibleTravel({ blok }) {
 				justifyContent="space-between"
 			>
 				<Grid size={{ xs: 12, md: 5.5 }}>
-					<Text variant="h3" sx={styles.header}>
+					<Text type="BigTitle" light sx={styles.header}>
 						{header}
 					</Text>
 					<StoryblokRichText doc={leftContent} />
@@ -59,7 +57,7 @@ function FlexibleTravel({ blok }) {
 				</Grid>
 			</Grid>
 			<Grid container sx={styles.discount(discountColor)}>
-				<Text variant="body" sx={styles.text}>
+				<Text fontType="primary" bold sx={styles.text}>
 					{discountText}
 				</Text>
 			</Grid>

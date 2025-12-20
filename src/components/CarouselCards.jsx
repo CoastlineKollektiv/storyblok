@@ -9,12 +9,11 @@ const styles = {
 		px: { xs: '1rem', sm: '2rem', md: '4rem', lg: '8rem' },
 		py: '2rem',
 	},
-	header: { fontSize: '1.75rem' },
 	img: (color) => ({ width: '100%', height: color ? 230 : 380 }),
 	circleImg: { height: 160, width: 160, borderRadius: '50%' },
 	carousel: { pt: '2rem' },
 	card: (cardColour) => ({ p: '10px', bgcolor: cardColour || 'trasnparent' }),
-	cardHeader: { width: '10rem', my: '1rem' },
+	cardHeader: { width: '10rem', my: '1rem', textTransform: 'uppercase' },
 	caption: { my: '1rem' },
 };
 
@@ -45,15 +44,15 @@ function CarouselCards({ blok }) {
 						/>
 					</Grid>
 					<Grid size={12} justifyItems="center">
-						<Text sx={styles.cardHeader} variant="h6">
+						<Text sx={styles.cardHeader} type="Text" bold fontType="primary">
 							{card.header}
 						</Text>
 					</Grid>
 					<Grid size={12}>
-						<Text variant="body">{card.content}</Text>
+						<Text type="Text">{card.content}</Text>
 					</Grid>
 					<Grid size={12}>
-						<Text sx={styles.caption} variant="subtitle2">
+						<Text sx={styles.caption} bold type="Text">
 							{card.caption}
 						</Text>
 					</Grid>
@@ -71,16 +70,16 @@ function CarouselCards({ blok }) {
 			justifyContent="center"
 		>
 			<Grid size={{ xs: 12, md: 6 }}>
-				<Text variant="button" sx={styles.header}>
+				<Text type="Title" bold>
 					{header}
 				</Text>
 			</Grid>
-			<Grid size={{ xs: 12, md: 8 }}>
-				<Text sx={styles.content}>{content}</Text>
+			<Grid size={{ xs: 12, md: 10 }}>
+				<Text type="Text">{content}</Text>
 			</Grid>
 			<Grid size={{ xs: 12, md: 8 }}>
 				{to && (
-					<Button variant="contained" sx={[styles.btn]}>
+					<Button sx={[styles.btn]}>
 						<Link href={to.full_slug}>{to.name}</Link>
 					</Button>
 				)}

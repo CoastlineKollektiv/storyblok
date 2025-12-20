@@ -39,7 +39,7 @@ function About({ blok }) {
 			textAlign="center"
 		>
 			<Grid size={{ xs: 12, sm: 8, md: 5 }}>
-				<Text type="Title" fontType="secondary" sx={styles.title}>
+				<Text type="BigTitle" light sx={styles.title}>
 					{blok.title}
 				</Text>
 			</Grid>

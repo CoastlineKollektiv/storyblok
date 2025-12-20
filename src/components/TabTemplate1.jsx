@@ -34,7 +34,7 @@ const TabTemplate1 = ({ blok }) => {
 							height={22}
 						/>
 					)}
-					<Text type="title" bold sx={{ ml: '0.5rem' }}>
+					<Text bold sx={{ ml: '0.5rem' }}>
 						{captionTitle}
 					</Text>
 				</Grid>

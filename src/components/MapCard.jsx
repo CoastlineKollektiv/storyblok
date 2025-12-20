@@ -6,7 +6,7 @@ import { Text } from '@/common';
 
 const styles = {
 	container: { p: '2rem' },
-	title: { my: '2rem', textTransform: 'uppercase' },
+	title: { my: '2rem' },
 };
 
 function MapCard({ blok }) {
@@ -17,7 +17,7 @@ function MapCard({ blok }) {
 				<Grid component="img" alt={map.alt} src={map.filename} width="100%" />
 			</Grid>
 			<Grid size={{ xs: 12, md: 5 }}>
-				<Text variant="h3" sx={styles.title}>
+				<Text type="BigTitle" light sx={styles.title}>
 					{title}
 				</Text>
 				<StoryblokRichText doc={content} />

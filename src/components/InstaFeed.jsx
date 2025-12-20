@@ -7,19 +7,23 @@ import { Text } from '@/common';
 const styles = {
 	container: { alignItems: 'center' },
 	icon: { mr: '1rem' },
-	header: { fontWeight: 'bold' },
 };
 
 function InstaFeed({ blok }) {
 	return (
 		<Grid container sx={styles.container}>
 			<Grid
-				size={{ xs: 11, md: 10 }}
-				offset={{ xs: 1, md: 2 }}
-				sx={{ py: '1rem' }}
+				size={12}
+				sx={{
+					py: '1rem',
+					px: '1rem',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}
 			>
 				<InstagramIcon sx={styles.icon} />
-				<Text variant="button" sx={styles.header}>
+				<Text type={'Text'} fontType="primary" bold>
 					{blok.header}
 				</Text>
 			</Grid>

@@ -9,7 +9,7 @@ import { Text } from '@/common';
 const styles = {
 	container: (color) => ({
 		alignItems: 'center',
-		p: '2rem',
+		p: { xs: '2rem', md: '2rem 4rem' },
 		bgcolor: color,
 	}),
 	fields: { bgcolor: 'white', '& filedset': { borderColor: 'common.black' } },
@@ -33,7 +33,7 @@ function Subscribe({ blok }) {
 	return (
 		<FormProvider {...methods}>
 			<Grid container sx={styles.container(blok.color.color)} spacing={2}>
-				<Grid size={{ xs: 12, md: 5 }}>
+				<Grid size={{ xs: 12, md: 4 }}>
 					{svg.filename && (
 						<Grid
 							component="img"
@@ -43,13 +43,13 @@ function Subscribe({ blok }) {
 							height="fit-content"
 						/>
 					)}
-					<Text component="h2" variant="h3">
+					<Text type="BigTitle" light>
 						{blok.title}
 					</Text>
-					<Text>{blok.caption}</Text>
+					<Text type="Text">{blok.caption}</Text>
 				</Grid>
 				<Grid
-					size={{ xs: 12, md: 5 }}
+					size={{ xs: 12, md: 6 }}
 					offset={{ xs: 0, md: 1 }}
 					container
 					spacing={2}

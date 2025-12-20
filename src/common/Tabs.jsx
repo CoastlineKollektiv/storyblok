@@ -12,11 +12,11 @@ import Text from './Text';
 
 const styles = {
 	tabs: {
-		color: 'colors.disabled',
 		minHeight: '48px',
-		'& .Mui-selected': { color: 'text.secondary' },
-		'& .MuiTabs-indicator': { height: 3 },
+		'& .Mui-selected': { color: 'common.black' },
+		'& .MuiTabs-indicator': { height: 3, bgcolor: 'transparent' },
 	},
+	selectedTab: { color: 'common.black' },
 	appBar: { background: 'common.white' },
 	centered: {
 		flex: 0,
@@ -25,17 +25,15 @@ const styles = {
 	},
 	tabPanelContent: { justifyContent: 'center' },
 	tabsBordered: {
-		borderBottom: '1px solid',
-		borderColor: 'colors.drawText',
+		borderBottom: '1px solid lightgray',
 	},
 	tab: {
 		opacity: 1,
 		p: '3 8px',
 		minHeight: '48px',
-		borderBottom: '1px solid lightgray',
 		minWidth: 'fit-content',
 	},
-	tabTitle: { color: 'inherit' },
+	tabTitle: { color: 'colors.disabled' },
 };
 
 function Tabs(props) {
@@ -90,7 +88,7 @@ function Tabs(props) {
 					const inValue = item.value === value || item.value === index;
 					return (
 						<Tab
-							sx={[styles.tab, centered && styles.tabsBordered]}
+							sx={[styles.tab, !inValue && styles.tabsBordered]}
 							key={item.id}
 							value={item.value || index}
 							disableFocusRipple
@@ -98,10 +96,9 @@ function Tabs(props) {
 							disabled={item.disabled}
 							label={
 								<Text
-									bold={inValue}
-									type="title"
-									fontType="secondary"
-									sx={[styles.tabLabel, styles.tabTitle]}
+									bold
+									type="Title"
+									sx={[styles.tabTitle, inValue && styles.selectedTab]}
 								>
 									{item.label}
 								</Text>

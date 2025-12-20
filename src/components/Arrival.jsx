@@ -14,7 +14,9 @@ function Arrival({ blok }) {
 	return (
 		<Grid container spacing={2} sx={styles.conatiner}>
 			<Grid size={{ xs: 12, md: 6 }}>
-				<Text variant="h3">{header}</Text>
+				<Text type="BigTitle" light>
+					{header}
+				</Text>
 				{types.map((type) => (
 					<StoryblokComponent key={type._uid} blok={type} />
 				))}

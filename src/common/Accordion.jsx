@@ -40,7 +40,7 @@ export default function Accordion(props) {
 				<AccordionSummary
 					expandIcon={<ExpandMoreIcon width={24} height={24} />}
 				>
-					<Text sx={styles.heading} bold component="span" fontType="secondary">
+					<Text light fontType="primary">
 						{item.heading}
 					</Text>
 				</AccordionSummary>

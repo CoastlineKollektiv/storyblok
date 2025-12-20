@@ -22,12 +22,10 @@ function ArrivalType({ blok }) {
 				)}
 			</Grid>
 			<Grid size={10}>
-				<Text component="div" variant="h6">
+				<Text type="Text" fontType="primary" bold>
 					{header}
 				</Text>
-				<Text component="div" variant="body">
-					{content}
-				</Text>
+				<Text sx={{ ml: '0.5rem' }}>{content}</Text>
 			</Grid>
 		</Grid>
 	);

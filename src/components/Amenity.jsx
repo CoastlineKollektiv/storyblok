@@ -4,51 +4,54 @@ import { Grid } from '@mui/material';
 import { Text } from '@/common';
 
 const styles = {
-	svgWrap: (color) => ({
+	svgWrap: (color, height, width) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: 60,
-		height: 60,
+		width: color.color ? 60 : height,
+		height: color.color ? 60 : width,
 		borderRadius: '50%',
 		bgcolor: color.color,
+		mb: '1rem',
 	}),
-	text: { mt: '1rem' },
-	title2: { fontSize: '1rem' },
+	title: { textTransform: 'uppercase' },
 };
 
-function Amenity({ blok }) {
+function Amenity({ blok, height = 40, width = 40 }) {
 	const { text, title, svg, bgcolor, price, title2 } = blok;
-
 	const image = (
 		<Grid
 			component="img"
 			alt={svg.alt}
-			width={40}
-			height={40}
+			width={width}
+			height={height}
 			src={svg.filename}
 		/>
 	);
 
 	return (
 		<React.Fragment>
-			{bgcolor ? <Grid sx={styles.svgWrap(bgcolor)}>{image}</Grid> : image}
+			{bgcolor ? (
+				<Grid sx={styles.svgWrap(bgcolor, height, width)}>{image}</Grid>
+			) : (
+				image
+			)}
 			{title && (
-				<Text variant="h4" id="title">
+				<Text type="Text" bold sx={styles.title}>
 					{title}
 				</Text>
 			)}
 			{title2 && (
-				<Text variant="h6" sx={styles.title2}>
+				<Text type="Text" light fontType="primary">
 					{title2}
 				</Text>
 			)}
-			{text && (
-				<Text variant="body" sx={styles.text}>
-					{text}
+			{text && <Text type="Text">{text}</Text>}
+			{price && (
+				<Text type="Text" bold>
+					{price}
 				</Text>
 			)}
-			{price && <Text variant="h6">{price}</Text>}
 		</React.Fragment>
 	);
 }

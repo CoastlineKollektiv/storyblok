@@ -8,6 +8,7 @@ const theme = createTheme({
 		colors: {
 			footerBackground: '#F3F1E9',
 			dotColor: '#333333',
+			disabled: '#777777',
 		},
 	},
 	cssVariables: true,

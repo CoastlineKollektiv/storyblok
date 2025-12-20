@@ -18,7 +18,6 @@ const styles = {
 	discountValue: { fontSize: { xs: '1.5rem', md: '2.5rem' }, lineHeight: 1 },
 	title: {
 		fontSize: { xs: '40px', md: '60px' },
-		fontWeight: 'bold',
 		letterSpacing: 10,
 		ml: { xs: '1rem', md: '3rem' },
 		width: { xs: '100%', md: '60%' },
@@ -41,12 +40,14 @@ const styles = {
 		color: 'common.white',
 		margin: 0,
 		ml: { xs: '1rem', md: '3rem' },
+		mb: '10px',
 		fontSize: '1.25rem',
 	},
 	caption: {
-		fontSize: '2rem',
+		mt: '100px',
 		ml: { xs: '1rem', md: '3rem' },
 		color: 'common.white',
+		textTransform: 'none',
 	},
 	discount: (color) => ({
 		display: 'flex',
@@ -80,24 +81,24 @@ function Hero({ blok }) {
 		>
 			<Grid size={{ xs: 11, sm: 10, md: 8, lg: 6 }} textAlign="left">
 				{blok.location && (
-					<Text variant="h6" sx={styles.location}>
+					<Text type="Title" bold sx={styles.location}>
 						<LocationIcon sx={styles.icon} /> {blok.location}
 					</Text>
 				)}
 				<Text
-					variant="h1"
+					type="BigTitle"
+					bold
 					sx={[styles.title, !blok.booking && styles.footerTitle]}
 				>
 					{blok.title}
 				</Text>
 				{blok.caption && (
-					<Text variant="h4" sx={styles.caption}>
+					<Text type="BigTitle" bold sx={styles.caption}>
 						{blok.caption}
 					</Text>
 				)}
 				{blok.booking && (
 					<Button
-						variant="contained"
 						sx={[
 							styles.btn,
 							(!blok.banner || !blok.caption) && styles.bottomSpace,
@@ -109,10 +110,15 @@ function Hero({ blok }) {
 			</Grid>
 			{blok.discount && (
 				<Grid sx={styles.discount(blok.themeColor.color)}>
-					<Text variant="button" sx={styles.discountValue}>
+					<Text
+						bold
+						type="Title"
+						fontType="secondary"
+						sx={styles.discountValue}
+					>
 						{blok.discount}%
 					</Text>
-					<Text variant="h6" sx={styles.label}>
+					<Text bold type="Title" fontType="secondary" sx={styles.label}>
 						{blok.discountLabel}
 					</Text>
 				</Grid>
@@ -129,7 +135,9 @@ function Hero({ blok }) {
 						justifyContent: 'center',
 					}}
 				>
-					<Text variant="body1">{blok.banner}</Text>
+					<Text bold type="Text">
+						{blok.banner}
+					</Text>
 				</Grid>
 			)}
 		</Grid>

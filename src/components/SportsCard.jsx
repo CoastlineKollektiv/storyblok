@@ -13,7 +13,7 @@ const styles = {
 		px: '2rem',
 		bgcolor: color.color,
 	}),
-	title: { lineHeight: 1, textTransform: 'uppercase', mb: '3rem' },
+	title: { letterSpacing: '1.5px', mb: '3rem' },
 };
 
 function SportsCard({ blok }) {
@@ -41,7 +41,7 @@ function SportsCard({ blok }) {
 			sx={styles.container(bgcolor)}
 		>
 			<Grid size={{ xs: 12, md: 5.5 }}>
-				<Text variant="h4" sx={styles.title}>
+				<Text type="BigTitle" light sx={styles.title}>
 					{title}
 				</Text>
 				<StoryblokRichText doc={content} />
@@ -60,6 +60,7 @@ function SportsCard({ blok }) {
 					size={{ xs: 4, md: 12 / amenities.length }}
 					key={amenity._uid}
 					container
+					spacing={0}
 					textAlign="center"
 					alignItems="center"
 					flexDirection="column"

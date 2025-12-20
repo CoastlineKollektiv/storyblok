@@ -12,11 +12,10 @@ const styles = {
 
 function AddonCard({ blok }) {
 	const { title, infoSvg, note, addons } = blok;
-
 	return (
 		<Grid container sx={styles.conatiner} spacing={2}>
 			<Grid size={12}>
-				<Text type="Title" fontType="secondary">
+				<Text type="BigTitle" light>
 					{title}
 				</Text>
 			</Grid>
@@ -25,11 +24,13 @@ function AddonCard({ blok }) {
 					key={amenity._uid}
 					size={{ xs: 12, md: 12 / addons.length }}
 					container
+					spacing={1}
 					textAlign="center"
 					alignItems="center"
+					justifyContent={'space-between'}
 					flexDirection="column"
 				>
-					<StoryblokComponent blok={amenity} />
+					<StoryblokComponent blok={amenity} height={80} width={80} />
 				</Grid>
 			))}
 			<Grid size={{ xs: 12, md: 4 }}>

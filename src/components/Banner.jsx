@@ -11,8 +11,7 @@ const styles = {
 	}),
 	title: (textColor) => ({
 		color: textColor.color,
-		fontSize: { xs: '2.5rem', md: '4rem' },
-		fontWeight: 700,
+		fontSize: { xs: '2.5rem', md: '5rem' },
 		lineHeight: 1,
 	}),
 	btn: {
@@ -38,15 +37,16 @@ function Banner({ blok }) {
 			<Grid size={{ xs: 12, md: 6 }} textAlign="center">
 				<Grid sx={styles.circle(textColor)} />
 				<Text
+					type="BigTitle"
+					fontType="primary"
+					bold
 					textAlign="center"
-					variant="button"
-					component="h2"
 					sx={styles.title(textColor)}
 				>
 					{title}
 				</Text>
 				{blok.to && (
-					<Button variant="contained" sx={styles.btn}>
+					<Button sx={styles.btn}>
 						<Link href={blok.to.full_slug}>{blok.to.name}</Link>
 					</Button>
 				)}

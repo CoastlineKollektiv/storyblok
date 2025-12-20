@@ -10,8 +10,7 @@ const styles = {
 		textAlign: 'center',
 		mt: '1rem',
 	},
-	header: { fontWeight: 'bold', fontSize: '1.5rem' },
-	caption: { fontSiz1: '1.25rem', my: '1rem' },
+	caption: { my: '1rem' },
 	image: { verticalAlign: 'bottom' },
 };
 
@@ -19,11 +18,11 @@ function Certificates({ blok }) {
 	const { title, caption, image } = blok;
 	return (
 		<Grid container sx={styles.container}>
-			<Grid size={7}>
-				<Text variant="button" component="div" sx={styles.header}>
+			<Grid size={{ xs: 11, md: 9, lg: 6 }}>
+				<Text type={'Title'} bold>
 					{title}
 				</Text>
-				<Text variant="body2" sx={styles.caption}>
+				<Text type={'Text'} sx={styles.caption}>
 					{caption}
 				</Text>
 			</Grid>

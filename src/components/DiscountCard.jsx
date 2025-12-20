@@ -11,7 +11,7 @@ const styles = {
 		px: { xs: '2rem', md: '4rem' },
 		py: '2rem',
 	}),
-	text: { color: 'common.white', fontSize: '2.5rem', lineHeight: 1 },
+	text: { color: 'common.white' },
 	btn: { mt: '1rem' },
 };
 
@@ -26,12 +26,12 @@ function DiscountCard({ blok }) {
 			flexDirection="column"
 		>
 			<Grid size={{ xs: 11, md: 7 }}>
-				<Text variant="button" sx={styles.text}>
+				<Text type="SubTitle" bold sx={styles.text}>
 					{text}
 				</Text>
 			</Grid>
 			{to && (
-				<Button variant="contained" sx={[styles.btn]}>
+				<Button sx={[styles.btn]}>
 					<Link href={blok.to.full_slug}>{blok.to.name}</Link>
 				</Button>
 			)}

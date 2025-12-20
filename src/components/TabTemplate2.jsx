@@ -27,7 +27,7 @@ const TabTemplate2 = ({ blok }) => {
 				<Carousel slides={slides} slidesPerView={1} isCircular isAutoPlay />
 			</Grid>
 			<Grid size={{ xs: 12, md: 6 }}>
-				<Text type="title" bold sx={{ fontSize: '2rem', mb: '1.5rem' }}>
+				<Text type="SubTitle" bold sx={{ mb: '1.5rem' }}>
 					{title}
 				</Text>
 				<Grid container spacing={2} sx={{ mt: '1rem' }}>

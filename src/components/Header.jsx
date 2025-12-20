@@ -15,7 +15,7 @@ import {
 	Collapse,
 } from '@mui/material';
 import Link from 'next/link';
-import { Button, IconButton } from '@/common';
+import { Button, IconButton, Text } from '@/common';
 import { useRouter } from 'next/navigation';
 import { ExpandMoreIcon, MenuIcon } from '@/common/svgs';
 
@@ -26,10 +26,8 @@ const styles = {
 	btn: {
 		cursor: 'pointer',
 		color: 'common.black',
-		fontWeight: 'bold',
 		overflowWrap: 'break-word',
 		textTransform: 'uppercase',
-		fontSize: '0.875rem',
 		'& a': { color: 'common.black' },
 		display: { xs: 'none', sm: 'block' },
 	},
@@ -206,6 +204,8 @@ export default function ElevateAppBar(props) {
 									<Button
 										key={button.id}
 										sx={{
+											width: '166px',
+											height: '42px',
 											mx: '0.5rem',
 											display: { xs: 'none', sm: 'inline-flex' },
 										}}
@@ -215,7 +215,9 @@ export default function ElevateAppBar(props) {
 											style={{ color: index % 2 === 0 ? 'black' : 'white' }}
 											href={button.full_slug}
 										>
-											{button.name}
+											<Text bold type="Subtitle" fontType="primary">
+												{button.name}
+											</Text>
 										</Link>
 									</Button>
 								))}
@@ -234,15 +236,34 @@ export default function ElevateAppBar(props) {
 										sx={styles.btn}
 										onClick={(e) => handleClick(e, item)}
 									>
-										{item.label}
+										<Text bold type="Subtitle" fontType="primary">
+											{item.label}
+										</Text>
 									</Grid>
 								);
 							})}
 						</Grid>
-						<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+						<Menu
+							anchorEl={anchorEl}
+							open={open}
+							anchorOrigin={{
+								vertical: 'bottom',
+								horizontal: 'center',
+							}}
+							keepMounted
+							transformOrigin={{
+								vertical: 'top',
+								horizontal: 'center',
+							}}
+							onClose={handleClose}
+						>
 							{menuOptions.map((item) => (
 								<MenuItem key={item.key} sx={styles.btn} onClick={handleClose}>
-									<Link href={item.full_slug}>{item.label}</Link>
+									<Link href={item.full_slug}>
+										<Text bold type="Subtitle" fontType="primary">
+											{item.label}
+										</Text>
+									</Link>
 								</MenuItem>
 							))}
 						</Menu>

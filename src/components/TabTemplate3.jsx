@@ -25,7 +25,7 @@ const TabTemplate3 = ({ blok }) => {
 		<Grid container spacing={5} sx={{ padding: '2rem' }}>
 			<Grid size={{ xs: 12, md: 6 }}>
 				<Carousel slides={slides} slidesPerView={1} isCircular isAutoPlay />
-				<Grid container alignItems="center" sx={{ my: '0.5rem' }}>
+				<Grid container alignItems="flex-start" spacing={1}>
 					{amenities.map((amenity) => (
 						<Grid
 							size={{ xs: 12, sm: 6 }}

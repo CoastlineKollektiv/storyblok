@@ -12,8 +12,6 @@ const styles = {
 		bgcolor: color.color,
 	}),
 	title: {
-		fontSize: '3rem',
-		fontWeight: 500,
 		lineHeight: 1,
 		mb: '3.5rem',
 		mt: '1rem',
@@ -47,7 +45,7 @@ function ImageCard({ blok }) {
 					/>
 				)}
 				{title && (
-					<Text variant="button" component="h2" sx={styles.title}>
+					<Text type="BigTitle" light sx={styles.title}>
 						{title}
 					</Text>
 				)}

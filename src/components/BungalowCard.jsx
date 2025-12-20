@@ -115,11 +115,11 @@ function BungalowCard({ blok }) {
 						<Grid
 							component="img"
 							alt={svg.alt}
-							width="fit-content"
-							height="fit-content"
+							width={16}
+							height={16}
 							src={svg.filename}
 						/>
-						<Text variant="button" sx={styles.text}>
+						<Text type="body" fontType="primary" bold sx={styles.text}>
 							{bestSellerText}
 						</Text>
 					</Grid>
@@ -130,7 +130,7 @@ function BungalowCard({ blok }) {
 				<Grid container sx={styles.btnWrap}>
 					<Grid size={5.5}>
 						{to && (
-							<Button variant="contained" sx={[styles.btn]}>
+							<Button sx={[styles.btn]}>
 								<Link href={to.full_slug}>{to.name}</Link>
 							</Button>
 						)}

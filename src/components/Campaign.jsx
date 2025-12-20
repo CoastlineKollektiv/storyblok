@@ -11,7 +11,6 @@ const styles = {
 	carouselWrap: { position: 'relative' },
 	label: {
 		lineHeight: 1,
-		textTransform: 'uppercase',
 		fontSize: { xs: '0.75rem', md: '1.25rem' },
 	},
 	discountValue: { fontSize: { xs: '1.25rem', md: '2.5rem' }, lineHeight: 1 },
@@ -76,10 +75,10 @@ function Campaign({ blok }) {
 			<Grid size={{ xs: 11, md: 5 }} sx={styles.carouselWrap}>
 				{blok.discount && (
 					<Grid sx={styles.discount(blok.themeColor.color)}>
-						<Text variant="button" sx={styles.discountValue}>
+						<Text type="Subtitle" bold sx={styles.discountValue}>
 							{blok.discount}%
 						</Text>
-						<Text variant="h6" sx={styles.label}>
+						<Text type="Subtitle" bold sx={styles.label}>
 							{blok.discountLabel}
 						</Text>
 					</Grid>
@@ -95,7 +94,7 @@ function Campaign({ blok }) {
 			<Grid size={{ xs: 11, md: 5 }}>
 				<StoryblokRichText doc={content} />
 				{blok.to && (
-					<Button variant="contained" sx={[styles.btn]}>
+					<Button sx={[styles.btn]}>
 						<Link href={blok.to.full_slug}>{blok.to.name}</Link>
 					</Button>
 				)}
