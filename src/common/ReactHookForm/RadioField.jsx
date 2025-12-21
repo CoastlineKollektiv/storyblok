@@ -48,15 +48,24 @@ function RadioField(props) {
 						</FormLabel>
 					) : null}
 					<RadioGroup row={row} {...field} {...rest}>
-						{options.map((item) => (
-							<FormControlLabel
-								key={item.label}
-								control={<Radio color="primary" size="small" />}
-								disabled={item.disabled}
-								label={item.label}
-								value={item.value}
-							/>
-						))}
+						{options.map((item) => {
+							return typeof item === 'string' ? (
+								<FormControlLabel
+									key={item}
+									control={<Radio color="primary" size="small" />}
+									label={item}
+									value={item}
+								/>
+							) : (
+								<FormControlLabel
+									key={item.label}
+									control={<Radio color="primary" size="small" />}
+									disabled={item.disabled}
+									label={item.label}
+									value={item.value}
+								/>
+							);
+						})}
 					</RadioGroup>
 					{errors[name] || helperText ? (
 						<FormHelperText error={Boolean(errors[name])}>

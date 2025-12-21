@@ -32,6 +32,19 @@ import TabTemplate1 from '@/components/TabTemplate1';
 import SurfTeam from '@/components/SurfTeam';
 import TabTemplate2 from '@/components/TabTemplate2';
 import TabTemplate3 from '@/components/TabTemplate3';
+import DownloadForm from '@/components/DownloadForm';
+import BookingForm from '@/components/BookingForm';
+import NewsLetter from '@/components/NewsLetter';
+import FormCheckField from '@/components/FormCheckField';
+import Notes from '@/components/Notes';
+import FormTextField from '@/components/FormTextField';
+import PersonData from '@/components/PersonData';
+import FormSelectField from '@/components/FormSelectField';
+import Accommodation from '@/components/Accommodation';
+import PersonalData from '@/components/PersonalData';
+import FormRadioField from '@/components/FormRadioField';
+import Dates from '@/components/Dates';
+import FormDateField from '@/components/FormDateField';
 
 const components = {
 	page: Page,
@@ -46,11 +59,20 @@ const components = {
 	arrival: Arrival,
 	flexibleTravel: FlexibleTravel,
 	'speed-dial': SpeedDial,
+	accommodation: Accommodation,
+	formRadio: FormRadioField,
+	personalData: PersonalData,
 	arrivalType: ArrivalType,
 	addOnCard: AddonCard,
 	surfTeam: SurfTeam,
+	downloadForm: DownloadForm,
+	bookingForm: BookingForm,
 	sportsCard: SportsCard,
+	newsletter: NewsLetter,
 	tabs: Tabs,
+	notes: Notes,
+	formCheckField: FormCheckField,
+	formInput: FormTextField,
 	tabTemplate1: TabTemplate1,
 	tabTemplate2: TabTemplate2,
 	tabTemplate3: TabTemplate3,
@@ -60,13 +82,17 @@ const components = {
 	instaFeed: InstaFeed,
 	subscribe: Subscribe,
 	campaign: Campaign,
+	formSelect: FormSelectField,
 	certificates: Certificates,
 	carouselCard: CarouselCards,
 	bungalowCard: BungalowCard,
 	goodToKnow: GoodToKnow,
 	banner: Banner,
 	about: About,
+	personData: PersonData,
 	mainFooter: MainFooter,
+	dates: Dates,
+	formDate: FormDateField,
 };
 
 export const getStoryblokApi = storyblokInit({

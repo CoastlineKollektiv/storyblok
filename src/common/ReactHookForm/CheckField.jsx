@@ -8,6 +8,7 @@ import {
 	FormLabel,
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
+import Text from '../Text';
 
 function CheckField(props) {
 	const {
@@ -58,8 +59,8 @@ function CheckField(props) {
 						}
 						label={
 							label ? (
-								<FormLabel sx={{ color: 'common.black', fontSize: '0.825rem' }}>
-									{label}
+								<FormLabel>
+									<Text type="Text">{label}</Text>
 								</FormLabel>
 							) : null
 						}

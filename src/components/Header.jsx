@@ -211,11 +211,13 @@ export default function ElevateAppBar(props) {
 										}}
 										variant={index % 2 === 0 ? 'outlined' : 'contained'}
 									>
-										<Link
-											style={{ color: index % 2 === 0 ? 'black' : 'white' }}
-											href={button.full_slug}
-										>
-											<Text bold type="Subtitle" fontType="primary">
+										<Link href={button.full_slug}>
+											<Text
+												bold
+												type="Subtitle"
+												fontType="primary"
+												sx={{ color: index % 2 === 0 ? 'black' : 'white' }}
+											>
 												{button.name}
 											</Text>
 										</Link>

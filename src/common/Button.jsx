@@ -5,37 +5,21 @@ import { Button as MuiButton } from '@mui/material';
 const styles = {
 	buttonStyle: {
 		fontSize: '1rem',
-		transition: 'all 0.3s ease-in-out',
+		outline: 'none',
 		'& a': { color: 'common.white' },
 		'&:hover': {
-			transform: 'translateY(-5px)',
-			boxShadow: 2,
-			'&::after': {
-				transform: 'scale(1.5)',
-				opacity: 0,
-			},
+			'&::after': { opacity: 0 },
+			outline: 'none',
+			bgcolor: 'transparent',
 		},
 		'&:active': {
-			transform: 'translateY(0px)',
 			boxShadow: 2,
 			outline: 'none',
+			bgcolor: 'transparent',
 		},
 		'&:focus': {
-			transform: 'translateY(0px)',
-			boxShadow: 1,
 			outline: 'none',
-		},
-	},
-	primary: {
-		color: 'common.white',
-		'&:hover': {
-			backgroundColor: 'primary.main',
-		},
-	},
-	secondary: {
-		backgroundColor: 'secondary.main',
-		'&:hover': {
-			backgroundColor: 'secondary.main',
+			bgcolor: 'transparent',
 		},
 	},
 };
@@ -53,14 +37,10 @@ function Button(props) {
 		<MuiButton
 			disableFocusRipple
 			disableRipple
+			disableElevation
 			disableTouchRipple
 			onClick={onClick}
-			sx={[
-				styles.buttonStyle,
-				color === 'primary' && styles.primary,
-				color === 'secondary' && styles.secondary,
-				...(Array.isArray(sx) ? sx : [sx]),
-			]}
+			sx={[styles.buttonStyle, ...(Array.isArray(sx) ? sx : [sx])]}
 			variant={variant}
 			{...other}
 		>

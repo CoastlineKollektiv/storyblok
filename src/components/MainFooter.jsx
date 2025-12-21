@@ -108,7 +108,7 @@ function MainFooter({ blok }) {
 					{contactTitle}
 				</Text>
 				{contactText.split('<br/>').map((line) => (
-					<Text type={'Text'} light>
+					<Text type={'Text'} key={line} light>
 						{line.replace('\n', '')}
 					</Text>
 				))}

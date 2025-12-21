@@ -26,8 +26,8 @@ const getFontWeight = (light, bold) => {
 };
 
 const styles = {
-	text: (fontType, light, bold) => ({
-		color: 'inherit',
+	text: (color, fontType, light, bold) => ({
+		color: color,
 		fontFamily: getBrandFont(fontType),
 		fontWeight: getFontWeight(light, bold),
 		lineHeight: 1.25,
@@ -51,7 +51,7 @@ const Text = ({
 	return (
 		<Typography
 			sx={[
-				styles.text(fontType, light, bold),
+				styles.text(color, fontType, light, bold),
 				config,
 				...(Array.isArray(sx) ? sx : [sx]),
 			]}
