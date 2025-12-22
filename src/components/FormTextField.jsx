@@ -1,6 +1,12 @@
 import { TextField } from '@/common/ReactHookForm';
 import React from 'react';
 
+const getName = (fieldName, index, name) => {
+	if (fieldName && index) return `${fieldName}.${index}.${name}`;
+	if (fieldName) return `${fieldName}.${name}`;
+	return name;
+};
+
 const FormTextField = ({ blok, name: fieldName, index }) => {
 	const { label, name, type } = blok;
 	const otherProps = type !== 'textarea' ? {} : { rows: 2, multiline: true };
@@ -8,7 +14,7 @@ const FormTextField = ({ blok, name: fieldName, index }) => {
 		<TextField
 			label={label}
 			type={type}
-			name={fieldName ? `${fieldName}.${index}.${name}` : name}
+			name={getName(fieldName, index, name)}
 			{...otherProps}
 		/>
 	);

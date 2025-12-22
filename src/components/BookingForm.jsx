@@ -21,11 +21,11 @@ const BookingForm = ({ blok }) => {
 	const { blocks, title, submitText, themeColor, bgcolor } = blok;
 	const { handleSubmit, ...methods } = useForm({
 		mode: 'onTouched',
-		defaultValues: { persons: [{ name: '' }] },
+		defaultValues: { persons: [{}] },
 	});
 	const submitForm = (values) => {
 		// eslint-disable-next-line no-console
-		console.log('values: ' + values);
+		console.log(values);
 	};
 	return (
 		<FormProvider {...methods}>
@@ -41,11 +41,7 @@ const BookingForm = ({ blok }) => {
 					</Grid>
 				))}
 				<Grid size={12} sx={{ textAlign: 'right', py: '2rem', pr: '2rem' }}>
-					<Button
-						sx={styles.btn}
-						onClick={handleSubmit(submitForm)}
-						variant="contained"
-					>
+					<Button sx={styles.btn} onClick={handleSubmit(submitForm)}>
 						{submitText}
 					</Button>
 				</Grid>

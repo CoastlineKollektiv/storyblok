@@ -10,16 +10,13 @@ const styles = {
 		'&:hover': {
 			'&::after': { opacity: 0 },
 			outline: 'none',
-			bgcolor: 'transparent',
 		},
 		'&:active': {
 			boxShadow: 2,
 			outline: 'none',
-			bgcolor: 'transparent',
 		},
 		'&:focus': {
 			outline: 'none',
-			bgcolor: 'transparent',
 		},
 	},
 };

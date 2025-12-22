@@ -31,7 +31,7 @@ const PersonalData = ({ blok, color }) => {
 					size={{ xs: [2, 5].includes(index) ? 12 : 6, md: 4 }}
 					key={nestedBlok._uid}
 				>
-					<StoryblokComponent blok={nestedBlok} />
+					<StoryblokComponent blok={nestedBlok} name={'personalData'} />
 				</Grid>
 			))}
 		</Grid>

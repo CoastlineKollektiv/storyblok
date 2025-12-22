@@ -2,18 +2,45 @@
 import { Button, Text } from '@/common';
 import { Grid } from '@mui/material';
 import { StoryblokComponent } from '@storyblok/react';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useFieldArray } from 'react-hook-form';
 
 const styles = {
 	title: (color) => ({ ml: '0.5rem', color }),
 };
 
+const getDefaultValue = (component) => {
+	switch (component) {
+		case 'formInput':
+			return '';
+		case 'formDate':
+			return null;
+		case 'formRadio':
+			return '';
+		case 'formCheckField':
+			return false;
+		case 'formSelect':
+			return 'Select';
+		default:
+			return '';
+	}
+};
+
 const PersonData = ({ blok, color }) => {
 	const { svg, title, blocks } = blok;
 
+	const defaultValues = useMemo(
+		() =>
+			blocks.reduce((acc, curr) => {
+				acc[curr.name] = getDefaultValue(curr.component);
+				return acc;
+			}, {}),
+		[blocks],
+	);
+
 	const { fields, append, remove } = useFieldArray({
 		name: 'persons',
+		defaultValues,
 	});
 
 	return (

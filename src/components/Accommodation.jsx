@@ -28,7 +28,7 @@ const Accommodation = ({ blok, color }) => {
 			</Grid>
 			{blocks.map((nestedBlok, index) => (
 				<Grid size={index === 2 ? 12 : { xs: 6, md: 4 }} key={nestedBlok._uid}>
-					<StoryblokComponent blok={nestedBlok} />
+					<StoryblokComponent blok={nestedBlok} name="accommodation" />
 				</Grid>
 			))}
 		</Grid>
