@@ -43,14 +43,14 @@ const styles = {
 		position: 'absolute',
 		color: 'common.black',
 		top: '50%',
-		transform: 'translateY(50%)',
+		transform: 'translateY(-50%)',
 		right: -60,
 	},
 	prevSideButton: {
 		position: 'absolute',
 		color: 'common.black',
 		top: '50%',
-		transform: 'translateY(50%)',
+		transform: 'translateY(-50%)',
 		left: -60,
 	},
 	nextBtnPosition: {
