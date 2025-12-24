@@ -57,7 +57,6 @@ function Banner({ blok }) {
 					component="img"
 					alt={image.alt}
 					width="100%"
-					height="100%"
 					src={image.filename}
 				/>
 			</Grid>
