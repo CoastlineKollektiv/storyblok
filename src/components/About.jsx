@@ -11,6 +11,13 @@ const gridMap = {
 	3: 'd',
 };
 
+const height = {
+	0: 500,
+	1: 500,
+	2: 240,
+	3: 240,
+};
+
 const styles = {
 	container: {
 		bgcolor: '#F3F1E9',
@@ -26,6 +33,7 @@ const styles = {
 		gridArea: gridMap[index],
 		width: '100%',
 		height: '100%',
+		maxHeight: height[index],
 	}),
 };
 
